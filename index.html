@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Niels van Londen, INST377 Assignemnt 2 -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="Assignment2.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="voiceCommands.js"></script>
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <div class="headfoot">
+      <header id="bar">
+        <h1>INST 377 Assignment 2 - Niels' Page</h1>
+      </header>
+    </div>
+
+    <nav id="main-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="stocks.html">Stocks</a></li>
+        <li><a href="dogs.html">Dogs</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-container">
+      <div class="flex-row">
+        <div class="left-column">
+          <button class="custom-button" onclick="location.href='stocks.html'">
+            Stocks
+          </button>
+          <button class="custom-button" onclick="location.href='dogs.html'">
+            Dogs
+          </button>
+        </div>
+
+        <div class="right-column">
+          <blockquote id="quote">Loading quote...</blockquote>
+        </div>
+      </div>
+
+      <div class="audio-instructions">
+        <div class="flex-row">
+          <div class="left-column">
+            <button class="custom-button" onclick="annyang.start()">
+              Turn On Voice
+            </button>
+            <button class="custom-button" onclick="annyang.abort()">
+              Turn Off Voice
+            </button>
+          </div>
+          <div class="right-column">
+            <h3>Navigate this webpage with your voice!</h3>
+            <p>Say "Hello" to see a message"</p>
+            <p>Say "Change the color to red(or any color)" to change the background color</p>
+            <p>Say "Navigate to dogs(or any page)" to opens the Dogs page</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="headfoot">
+      <footer id="bar">
+        <p>Footer!</p>
+      </footer>
+    </div>
+  </body>
+</html>
