@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stocks</title>
+    <link rel="stylesheet" href="Assignment2.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="voiceCommands.js"></script>
+    <script defer src="stocks.js"></script>
+  </head>
+  <body>
+    <div class="headfoot">
+      <header id="bar">
+        <h1>INST 377 Assignment 2 - Niels' Page</h1>
+      </header>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stocks.html">Stocks</a></li>
+        <li><a href="dogs.html">Dogs</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-container">
+      <div class="container">
+        <h2>Enter a ticker to see its value chart</h2>
+        <form onsubmit="submitStockForm(); return false;" class="stock-form">
+          <label for="ticker">Stock Ticker:</label>
+          <input type="text" name="ticker" id="ticker" required maxlength="5"/>
+
+          <label for="days">Select Range:</label>
+          <select name="days" id="days">
+            <option value="30">30 Days</option>
+            <option value="60">60 Days</option>
+            <option value="90">90 Days</option>
+          </select>
+
+          <input type="submit" value="Load Chart" class="custom-button" />
+        </form>
+
+        <canvas id="myChart" style="display: none"></canvas>
+      </div>
+      <div class="container">
+        <table border="1" id="stocks-table">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Comment Count</th>
+              <th>Sentiment</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+      <div class="audio-instructions">
+        <div class="flex-row">
+          <div class="left-column">
+            <button class="custom-button" onclick="annyang.start()">
+              Turn On Voice
+            </button>
+            <button class="custom-button" onclick="annyang.abort()">
+              Turn Off Voice
+            </button>
+          </div>
+          <div class="right-column">
+            <h3>Voice Commands</h3>
+            <p>
+              Say "look up MSFT(or any stock ticker)" to load info on a stock
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="headfoot">
+      <footer id="bar">
+        <p>Footer!</p>
+      </footer>
+    </div>
+  </body>
+</html>
